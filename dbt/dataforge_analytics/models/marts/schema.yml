@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Order-level analytical fact model."
+    columns:
+      - name: order_id
+        description: "Unique order identifier."
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_key
+        description: "Warehouse customer surrogate key."
+        tests:
+          - not_null
+
+      - name: order_date_key
+        description: "Date dimension key for the order."
+        tests:
+          - not_null
+
+  - name: fct_order_item_summary
+    description: "Order-level aggregation of order-item metrics."
+    columns:
+      - name: order_id
+        description: "Order identifier."
+        tests:
+          - not_null
+          - unique
+
+      - name: item_count
+        description: "Number of order items."
+        tests:
+          - not_null

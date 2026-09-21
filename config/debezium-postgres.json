@@ -1,0 +1,19 @@
+{
+  "name": "dataforge-postgres-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "database.hostname": "postgres",
+    "database.port": "5432",
+    "database.user": "debezium",
+    "database.password":"YOUR_DEBEZIUM_PASSWORD",
+    "database.dbname": "nordmarket",
+    "topic.prefix": "dataforge",
+    "plugin.name": "pgoutput",
+    "slot.name": "dataforge_slot",
+    "publication.name": "dataforge_publication",
+    "publication.autocreate.mode": "filtered",
+    "schema.include.list": "public",
+    "table.include.list": "public.customers,public.products,public.orders,public.order_items,public.payments",
+    "snapshot.mode": "initial"
+  }
+}

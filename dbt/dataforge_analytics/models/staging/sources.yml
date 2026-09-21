@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: analytics
+    schema: analytics
+    description: "Existing DataForge PostgreSQL warehouse tables."
+
+    tables:
+      - name: fact_orders
+        description: "Order-level fact table loaded from the Gold layer."
+
+      - name: fact_order_items
+        description: "Order-item-level fact table loaded from the Silver layer."
+
+      - name: dim_customer
+        description: "Customer dimension."
+
+      - name: dim_product
+        description: "Product dimension."
+
+      - name: dim_date
+        description: "Date dimension."

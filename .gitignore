@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+.vscode/
+*.log
+data/raw/
+data/processed/
+
+data/bronze/
+data/silver/
+data/gold/
